@@ -93,10 +93,21 @@ class CalculatorState extends ChangeNotifier {
       result /= 100;
     else
       result = sqrt(result);
+
     if (result % 1 == 0)
       n1 = result.toStringAsFixed(0);
-    else
+    else {
       n1 = result.toStringAsPrecision(16);
+      int end = n1.length-1;
+      while (true) {
+        if (n1[end] == "0")
+          end--;
+        else
+          break;
+      }
+      n1 = n1.substring(0, end+1);
+    }
+
     operand = "";
     n2 = "";
     notifyListeners();
