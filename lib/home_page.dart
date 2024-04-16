@@ -33,7 +33,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Text(
-                    "$n1$operand$n2".isNotEmpty ? "$n1$operand$n2" : "0",
+                    "$n1$operand$n2",
                     style: Theme.of(context).textTheme.displayLarge,
                     textAlign: TextAlign.right,
                   ),
